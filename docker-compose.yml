@@ -1,0 +1,17 @@
+version: "3.4"
+services:
+  postgresql:
+    container_name: "storex_postgresql"
+    image: "postgres"
+    shm_size: 1g
+    environment:
+      POSTGRES_USER: 'postgres'
+      POSTGRES_PASSWORD: 'postgres'
+      POSTGRES_DB: storex_dev
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/data/postgresql/data
+
+volumes:
+  pgdata:
